@@ -36,6 +36,7 @@ echo "> Loading views" >&1
 npm run load
 echo "> Copying design documents" >&1
 curl -k "http://localhost:5984/registry/_design/scratch" -X COPY -H destination:'_design/app'
+curl http://isaacs.iriscouch.com/registry/error%3A%20forbidden | curl -X PUT -d @- http://localhost:5984/registry/error%3A%20forbidden?new_edits=false
 
 # Installing npm-delegate
 npm install -g npm-delegate
