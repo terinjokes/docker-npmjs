@@ -1,16 +1,22 @@
-[![Stories in Ready](https://badge.waffle.io/terinjokes/docker-npmjs.png?label=ready)](https://waffle.io/terinjokes/docker-npmjs)  
-# Docker Images for npm
+[![Stories in Ready](https://badge.waffle.io/terinjokes/docker-npmjs.png?label=ready)](https://waffle.io/terinjokes/docker-npmjs)
+
+# Docker Image for npm
+|Version|0.3.0|
+|Docker Versions|^0.6.0|
 
 An easy way to get started with a private npm server, along with npm-delegate.
 These instructions assume you've already installed Docker per the [Getting Started](http://www.docker.io/gettingstarted/) guide.
 
 ## Building
 
-This image can be build by running the following docker command:
+This image can be built by running the following docker command:
 
 ```
-docker build -t npmjs .
+docker build -t npmjs github.com/terinjokes/docker-npmjs
 ```
+
+> You can build from a git tag by appending a ref to the above URL.
+> For example `github.com/terinjokes/docker-npmjs#0.3.0`
 
 ## Running
 
