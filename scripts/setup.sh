@@ -39,4 +39,4 @@ curl -k "http://localhost:5984/registry/_design/scratch" -X COPY -H destination:
 curl http://isaacs.iriscouch.com/registry/error%3A%20forbidden | curl -X PUT -d @- http://localhost:5984/registry/error%3A%20forbidden?new_edits=false
 
 # Installing npm-delegate
-npm install -g npm-delegate
+npm install -g npm-delegate@0.2.x
