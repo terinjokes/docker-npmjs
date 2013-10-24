@@ -1,4 +1,4 @@
-# Version: 0.3.0 15-Oct-2013
+# Version: 0.3.1 24-Oct-2013
 # DOCKER-VERSION 0.4.x
 FROM ubuntu:12.10
 MAINTAINER Terin Stock <terinjokes@gmail.com>
