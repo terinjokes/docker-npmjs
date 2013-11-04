@@ -1,8 +1,8 @@
 [![Stories in Ready](https://badge.waffle.io/terinjokes/docker-npmjs.png?label=ready)](https://waffle.io/terinjokes/docker-npmjs)
 
 # Docker Image for npm
-**Version**: 0.3.1
-**Docker Versions**: ^0.6.0
+**Version**: 0.3.1  
+**Docker Versions**: 0.6.0 - 0.6.4
 
 An easy way to get started with a private npm server, along with npm-delegate.
 These instructions assume you've already installed Docker per the [Getting Started](http://www.docker.io/gettingstarted/) guide.
