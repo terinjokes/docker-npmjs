@@ -21,10 +21,10 @@ docker build -t npmjs github.com/terinjokes/docker-npmjs
 ## Running
 
 After building the image, a container can be spawned.
-Providing the hostname (via the `-h`) options, as well as exposing the port (`-p`) is required to use this image.
+Providing the hostname (via the `-h`) options, as well as exposing the ports (`-p`) is required to use this image.
 
 ```
-docker run -d -h cdnutu -p=1337:1337 npmjs
+docker run -d -h cdnutu -p=5984:5984 -p=1337:1337 npmjs
 ```
 
 ## Using
