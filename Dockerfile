@@ -21,12 +21,12 @@ RUN cd /opt/npmjs; npm link couchapp; npm install semver
 RUN echo "[httpd]\nsecure_rewrites = false" >> /usr/local/etc/couchdb/local.d/secure_rewrites.ini
 
 # Configuring npmjs.org
-RUN cd /opt/npmjs; couchdb -b; sleep 1; curl -X PUT http://localhost:5984/registry; sleep 1; couchdb -d;
-RUN cd /opt/npmjs; couchdb -b; sleep 1; couchapp push registry/shadow.js http://localhost:5984/registry; sleep 1; couchapp push registry/app.js http://localhost:5984/registry; sleep 1; couchdb -d
+RUN cd /opt/npmjs; couchdb -b; sleep 5; curl -X PUT http://localhost:5984/registry; sleep 5; couchdb -d;
+RUN cd /opt/npmjs; couchdb -b; sleep 5; couchapp push registry/shadow.js http://localhost:5984/registry; sleep 5; couchapp push registry/app.js http://localhost:5984/registry; sleep 5; couchdb -d
 RUN cd /opt/npmjs; npm set _npmjs.org:couch=http://localhost:5984/registry
-RUN cd /opt/npmjs; couchdb -b; sleep 1; npm run load; sleep 1; curl -k "http://localhost:5984/registry/_design/scratch" -X COPY -H destination:'_design/app'; sleep 1; couchdb -d
+RUN cd /opt/npmjs; couchdb -b; sleep 5; npm run load; sleep 5; curl -k "http://localhost:5984/registry/_design/scratch" -X COPY -H destination:'_design/app'; sleep 5; couchdb -d
 ## Resolve isaacs/npmjs.org#98
-RUN cd /opt/npmjs; /usr/local/bin/couchdb -b; sleep 1; curl http://isaacs.iriscouch.com/registry/error%3A%20forbidden | curl -X PUT -d @- http://localhost:5984/registry/error%3A%20forbidden?new_edits=false; sleep 1; couchdb -d
+RUN cd /opt/npmjs; /usr/local/bin/couchdb -b; sleep 5; curl http://isaacs.iriscouch.com/registry/error%3A%20forbidden | curl -X PUT -d @- http://localhost:5984/registry/error%3A%20forbidden?new_edits=false; sleep 5; couchdb -d
 
 # Install npm-delegate
 RUN npm install -g kappa@0.12.x
