@@ -1,4 +1,4 @@
-# Version: 0.5.0 18-Nov-2013
+# Version: 0.5.1 02-Dec-2013
 FROM sbisbee/couchdb:1.4
 MAINTAINER Terin Stock <terinjokes@gmail.com>
 
