@@ -2,7 +2,7 @@
 
 # Docker Image for npm
 **Version**: 0.5.1  
-**Docker Versions**: >=0.6.5 <=0.8.0
+**Docker Versions**: >=0.6.5 <0.8.0
 
 An easy way to get started with a private npm server, along with [kappa](https://github.com/paypal/kappa).
 These instructions assume you've already installed Docker per the [Getting Started](http://www.docker.io/gettingstarted/) guide.
