@@ -1,5 +1,5 @@
 # Version: 0.5.1 02-Dec-2013
-FROM sbisbee/couchdb:1.4
+FROM sbisbee/couchdb:1.5
 MAINTAINER Terin Stock <terinjokes@gmail.com>
 
 ENV PATH /opt/node/bin/:$PATH
@@ -35,3 +35,4 @@ RUN npm install -g kappa@0.12.x
 ADD config/kappa.json.default /opt/npmjs/kappa.json.default
 ADD scripts/startup.sh /root/startup.sh
 CMD /root/startup.sh
+
