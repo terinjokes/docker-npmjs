@@ -12,7 +12,7 @@ These instructions assume you've already installed Docker per the [Getting Start
 This image can be built by running the following docker command:
 
 ```
-docker build -t npmjs github.com/terinjokes/docker-npmjs
+docker build -q -t npmjs github.com/terinjokes/docker-npmjs
 ```
 
 > You can build from a git tag by appending a ref to the above URL.
