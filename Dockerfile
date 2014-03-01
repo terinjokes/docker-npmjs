@@ -1,4 +1,4 @@
-# Version: 0.5.1 02-Dec-2013
+# Version: 0.5.2 28-Feb-2014
 FROM sbisbee/couchdb:1.4
 MAINTAINER Terin Stock <terinjokes@gmail.com>
 
@@ -9,7 +9,7 @@ RUN apt-get install -y curl git
 
 # Setup nodejs
 RUN mkdir -p /opt/node
-RUN curl -L# http://nodejs.org/dist/v0.10.21/node-v0.10.21-linux-x64.tar.gz|tar -zx --strip 1 -C /opt/node
+RUN curl -L# http://nodejs.org/dist/v0.10.26/node-v0.10.26-linux-x64.tar.gz|tar -zx --strip 1 -C /opt/node
 
 # Download npmjs project
 RUN git clone https://github.com/isaacs/npmjs.org /opt/npmjs
@@ -29,7 +29,7 @@ RUN cd /opt/npmjs; couchdb -b; sleep 5; npm run load; sleep 5; curl -k "http://l
 RUN cd /opt/npmjs; /usr/local/bin/couchdb -b; sleep 5; curl http://isaacs.iriscouch.com/registry/error%3A%20forbidden | curl -X PUT -d @- http://localhost:5984/registry/error%3A%20forbidden?new_edits=false; sleep 5; couchdb -d
 
 # Install npm-delegate
-RUN npm install -g kappa@0.12.x
+RUN npm install -g kappa@0.14.x
 
 # Start
 ADD config/kappa.json.default /opt/npmjs/kappa.json.default
