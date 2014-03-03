@@ -16,7 +16,7 @@ In addition to what [docker-couchdb](https://github.com/terinjokes/docker-couchd
 You can save the databases outside the container by mapping it to a directory on your host:
 
 ```
-docker run -v /path/on/host/couchdb:/opt/couchdb/var/lib/couchdb/:rw terinjokes/docker-couchdb
+docker run -v /path/on/host/couchdb:/opt/couchdb/var/lib/couchdb/:rw terinjokes/docker-npmjs
 ```
 
 For more information, see the Docker documentation on [mounting a host directory](http://docs.docker.io/en/latest/use/working_with_volumes/#mount-a-host-directory-as-a-container-volume).
