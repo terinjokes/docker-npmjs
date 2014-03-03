@@ -10,12 +10,12 @@ if [[ ! -e /opt/couchdb/var/lib/couchdb/registry.couch ]]; then
 	cd npmjs.org
 	git checkout tags/v2.0.4
 
-	npm install
+	/opt/node/bin/npm install
 
 	curl -X PUT http://localhost:5984/registry
 
-	npm start --npmjs.org:couch=http://localhost:5984/registry
-	DEPLOY_VERSION=`git describe --tags` npm run load --npmjs.org:couch=http://localhost:5984/registry
+	/opt/node/bin/npm start --npmjs.org:couch=http://localhost:5984/registry
+	DEPLOY_VERSION=`git describe --tags` /opt/node/bin/npm run load --npmjs.org:couch=http://localhost:5984/registry
 
 	# copy.sh doesn't work if couchdb doesn't have authentication
 	# https://github.com/npm/npmjs.org/issues/152
