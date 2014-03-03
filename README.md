@@ -1,43 +1,28 @@
-[![Stories in Ready](https://badge.waffle.io/terinjokes/docker-npmjs.png?label=ready)](https://waffle.io/terinjokes/docker-npmjs)
+# A Docker-friendly base npmjs [![Stories in Ready](https://badge.waffle.io/terinjokes/docker-npmjs.png?label=ready)](https://waffle.io/terinjokes/docker-npmjs)
 
-# Docker Image for npm
-**Version**: 0.5.2  
-**Docker Versions**: >=0.6.5 <0.9.0
+> A vanilla installation of the npmjs registry code built upon [docker-couchdb](https://github.com/terinjokes/docker-couchdb) and [baseimage-docker](https://github.com/phusion/baseimage-docker).
 
-An easy way to get started with a private npm server, along with [kappa](https://github.com/paypal/kappa).
-These instructions assume you've already installed Docker per the [Getting Started](http://www.docker.io/gettingstarted/) guide.
+This container is available for pulling from [the Docker registry](https://index.docker.io/u/terinjokes/couchdb)!
 
-## Building
+---
 
-This image can be built by running the following docker command:
+## What's Inside?
 
-```
-docker build -t npmjs github.com/terinjokes/docker-npmjs
-```
+In addition to what [docker-couchdb](https://github.com/terinjokes/docker-couchdb#whats-inside) provides:
 
-> You can build from a git tag by appending a ref to the above URL.
-> For example `github.com/terinjokes/docker-npmjs#0.5.1`
+- An installation of the open source npmjs registry code, ready for use as a private npmjs registry or a public mirror.
 
-## Running
-
-After building the image, a container can be spawned.
-Providing the vhost (via the `-h`) options, as well as exposing the ports (`-p`) is required to use this image.
+## Saving the database outside the container
+You can save the databases outside the container by mapping it to a directory on your host:
 
 ```
-docker run -d -h npmjs.intranet -p=5984:5984 -p=1337:1337 npmjs
+docker run -v /path/on/host/couchdb:/opt/couchdb/var/lib/couchdb/:rw terinjokes/docker-couchdb
 ```
 
-## Using
-Kappa is exposed on port 1337, and will delegate requests to either your local registry or the public fallback.
-You'll want to change your default registry via:
+For more information, see the Docker documentation on [mounting a host directory](http://docs.docker.io/en/latest/use/working_with_volumes/#mount-a-host-directory-as-a-container-volume).
 
-```
-npm config set registry http://npmjs.intranet:1337/
-```
+## Related Projects
 
-Kappa is configured to be read-write to the local registry. To use the public registry use the `--registry` flag to npm.
-
-```
-npm --registry https://registry.npmjs.org/ adduser
-npm --registry https://registry.npmjs.org/ publish
-```
+- Itching to use CouchDB in your next project? Check out [docker-couchdb](https://github.com/terinjokes/docker-couchdb).
+- Want a mirror of the public npmjs registry? [skim (without attachments)](https://github.com/terinjokes/docker-npmjs-skim) or [fullfat (with attachments)](https://github.com/terinjokes/docker-npmjs-fullfat).
+- Private registry with delegation to a public registry more your taste? [docker-npmjs-delegate](https://github.com/terinjokes/docker-npmjs-delegate).
