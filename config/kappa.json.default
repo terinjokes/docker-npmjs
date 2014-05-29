@@ -6,15 +6,14 @@
 		}
 	],
 	"plugins": {
-		"kappa": [
-			{},
+		"kappa":
 			{
+				"hostname": "${hostname}",
 				"paths": [
 					"http://${hostname}:5984/",
 					"https://registry.npmjs.org/",
 					"http://npm.nodejs.org.au:5984/registry/_design/app/_rewrite"
 				]
 			}
-		]
 	}
 }
