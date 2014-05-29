@@ -17,6 +17,9 @@ RUN cd /opt/npmjs; git checkout ea8e7a533ea595db79b24f12c76b62c3889b43e8
 RUN npm install couchapp@0.10.x -g
 RUN cd /opt/npmjs; npm link couchapp; npm install semver
 
+# Download kappa
+RUN npm install -g kappa@0.14.3
+
 # Allow insecure rewrites
 RUN echo "[httpd]\nsecure_rewrites = false" >> /usr/local/etc/couchdb/local.d/secure_rewrites.ini
 
