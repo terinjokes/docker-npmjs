@@ -5,7 +5,7 @@ set -x
 
 $minimal_apt_get_install dnsutils
 
-# This is going to need to be refactored to avoid clobberring terinjokes/docker-couchdb
+# This is going to need to be refactored to avoid clobbering terinjokes/docker-couchdb
 cat<<EOF > /opt/couchdb/etc/couchdb/local.ini
 [couch_httpd_auth]
 public_fields = appdotnet, avatar, avatarMedium, avatarLarge, date, email, fields, freenode, fullname, github, homepage, name, roles, twitter, type, _id, _rev

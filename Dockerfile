@@ -1,4 +1,4 @@
-# Version: 0.6.0-head
+# Version: 0.7.0-head
 FROM terinjokes/couchdb
 MAINTAINER Terin Stock <terinjokes@gmail.com>
 
