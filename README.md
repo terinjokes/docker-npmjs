@@ -1,6 +1,11 @@
-[![Stories in Ready](https://badge.waffle.io/terinjokes/docker-npmjs.png?label=ready)](https://waffle.io/terinjokes/docker-npmjs)
+# WIP
+
+[couchdb branch](https://github.com/terinjokes/docker-npmjs/tree/couchdb)
 
 # Docker Image for npm
+
+[![Stories in Ready](https://badge.waffle.io/terinjokes/docker-npmjs.png?label=ready)](https://waffle.io/terinjokes/docker-npmjs)
+
 **Version**: 0.5.2  
 **Docker Versions**: >=0.6.5 <0.9.0
 
