@@ -1,0 +1,13 @@
+{
+  "name": "mykappa",
+  "version": "0.0.0",
+  "description": "Personal NPM registry",
+  "scripts": {
+    "start": "kappa -c kappa.json"
+  },
+  "dependencies": {
+    "good": "~2.3.0",
+    "hapi": "~6.9.0",
+    "kappa": "~1.0.0-rc.1"
+  }
+}
